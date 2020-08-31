@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.9k 字
+      2k 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      11
        分钟
     </span>
   
@@ -215,7 +215,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：13 小时前
+                  本文最后更新于：10 天前
                 
               </p>
             
@@ -224,6 +224,14 @@
 <p>我今天就要把我的大创项目拿出来婊.jpg</p>
 <a id="more"></a>
 
+
+
+<h1 id="2020-08-28"><a href="#2020-08-28" class="headerlink" title="2020.08.28"></a>2020.08.28</h1><p>写了一下中期检查（30%）前需要做的事。</p>
+<h1 id="2020-08-27"><a href="#2020-08-27" class="headerlink" title="2020.08.27"></a>2020.08.27</h1><p>和导师对线一天筋疲力尽，但是有了可以带我们的师姐。</p>
+<h1 id="2020-08-22"><a href="#2020-08-22" class="headerlink" title="2020.08.22"></a>2020.08.22</h1><ol>
+<li>用limma包进行分析需要：表达矩阵（exprSet），分组矩阵group_list ，差异比较矩阵contrast.matrix</li>
+<li>但是我的差异比较矩阵做的有问题，R不支持空格当rownames/colnames 所以我要把空格换成下划线？还是直接换成control/case组？</li>
+</ol>
 <h1 id="2020-08-21"><a href="#2020-08-21" class="headerlink" title="2020.08.21"></a>2020.08.21</h1><ol>
 <li><p>根据GSE19826和GPL570平台对进行id转换并筛选具有最大表达量的探针</p>
 </li>
@@ -368,6 +376,13 @@ exprSet_L = melt(exprSet)
 colnames(exprSet_L) = c(<span class="hljs-string">&#x27;probe&#x27;</span>,<span class="hljs-string">&#x27;sample&#x27;</span>,<span class="hljs-string">&#x27;value&#x27;</span>)
 exprSet_L$group = rep(group_list,each = nrow(exprSet))
 head(exprSet_L)
+
+<span class="hljs-comment">#载入limma包</span>
+<span class="hljs-comment">#制作分组矩阵</span>
+<span class="hljs-keyword">library</span>(limma)
+design &lt;- model.matrix(~<span class="hljs-number">0</span> + factor(group_list))
+colnames(design) = levels(factor(group_list))
+rownames(design) = colnames(exprSet)
 </code></pre>
 
 <p><img src="C:\Users\Administrator\Documents\Rplot.png" srcset="/img/loading.gif" alt="Rplot"></p>
