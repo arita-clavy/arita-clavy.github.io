@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.3k 字
+      2.6k 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      13
        分钟
     </span>
   
@@ -215,7 +215,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：9 天前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -224,6 +224,26 @@
 <p>我今天就要把我的大创项目拿出来婊.jpg</p>
 <a id="more"></a>
 
+<h1 id="2020-09-09"><a href="#2020-09-09" class="headerlink" title="2020.09.09"></a>2020.09.09</h1><ol>
+<li><p>明确几个问题：</p>
+<ol>
+<li><p>处理后的具有两个channel的DNA样本，首列是基因名，表头是样本名，而数据是normalization log2 ratio cy3/cy5（tumor/normal)，癌症组织/正常组织，通过荧光染料标记确定两个样本中存在明显差异表达的基因。</p>
+</li>
+<li><p>但是双channel的一般是早期测表达的的array数据，不是很建议用XD（此处又过滤掉了两个双channel样本）</p>
+</li>
+<li><p>用样本来源地分组确认可行。除了limma以外还可以用回归分析筛选差异表达的基因（此处推荐了一个工具<a target="_blank" rel="noopener" href="https://hoffmanlab.org/proj/segtools/">SEGTools</a>。</p>
+<p><em>居然是个python软件，fine，这位python朋友我们也不能抛弃:(</em></p>
+</li>
+</ol>
+</li>
+<li><p>确认后双channel的GSE22804样本可以用，该样本的数值为normalization log2 ratio cy3/cy5，log2 Ratio&gt;0.58或者log2 Ratio&lt;-1则认为存在差异。<strong>所以我们只需要把数值处在差异区间的基因名称筛出来最后做比较就可以了？</strong></p>
+</li>
+<li><p>最后把差异基因筛选出来之后应该需要进行GO基因本体分析&amp;KEGG通路分析。</p>
+</li>
+<li><p>代码进度：把GSE118916进行ID转换后的表达矩阵筛了出来OTL 我在想我是不是应该都筛出来之后往一起合umm</p>
+<p><strong>过滤有效探针+筛选最大表达量的探针这一步一定要做，因为检查出来的探针不仅有无效的（不和Gene Symbol联系）甚至还有重的……</strong></p>
+</li>
+</ol>
 <h1 id="2020-09-05"><a href="#2020-09-05" class="headerlink" title="2020.09.05"></a>2020.09.05</h1><ol>
 <li>鸽了几天终于把GEO数据挖掘的文档填完了，有几个关于数据的问题&amp;拟了两种分组策略交给师姐看还没有收到回复。虽然还没有正式确定——大概前期准备工作就到这里为止了。</li>
 <li>想了想这段时间也没有额外做什么东西。无疑就是读了一点没什么用的中文paper，稍微拟了一下整个项目大概需要做些什么，学了一点点有关GEO数据挖掘的代码，没了。现罹患大创ptsd，只是看到“大创”这两个字我就条件反射性感到焦虑:) </li>
