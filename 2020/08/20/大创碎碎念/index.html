@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.4k 字
+      3.9k 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      16
+      18
        分钟
     </span>
   
@@ -215,7 +215,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 个月前
+                  本文最后更新于：2 个月前
                 
               </p>
             
@@ -224,9 +224,86 @@
 <p>我今天就要把我的大创项目拿出来婊.jpg</p>
 <a id="more"></a>
 
+<h1 id="2020-11-01"><a href="#2020-11-01" class="headerlink" title="2020.11.01"></a>2020.11.01</h1><p>但是GPL5175的重注释做到现在也还没做出来:D</p>
+<h1 id="2020-10-24"><a href="#2020-10-24" class="headerlink" title="2020.10.24"></a>2020.10.24</h1><p>癌症组织vs癌症组织可以筛查出10000多个差异基因，绝了！难道癌症组织vs癌症组织需要看二者共表达的基因吗（</p>
+<h1 id="2020-10-23"><a href="#2020-10-23" class="headerlink" title="2020.10.23"></a>2020.10.23</h1><p>昨天一时上头搞得GSE26899和GSE26901的表达矩阵&amp;分组矩阵&amp;比较矩阵也都做完了。</p>
+<pre><code class="hljs r">x_merge = cbind(x1[cg,],x2[cg,])</code></pre>
+
+<p>这段坑爹的代码让我换成了subset形式，但这样做出来的数据格式就是large matrix，不知道对实验结果会不会有什么影响。</p>
+<p>剩下的分组要么是单分组，要么是GPL比较友好的数据集，要么就是GPL5175……草，GPL5175这个东西应该怎么做。</p>
+<h1 id="2020-10-22"><a href="#2020-10-22" class="headerlink" title="2020.10.22"></a>2020.10.22</h1><p>GSE34942的表达矩阵&amp;分组矩阵design&amp;contrast.matrix都做好了，而且也做完了消除批次效应。拖了一个月大创终于又有了那么一点进度（。</p>
+<p>在这里做个表格，懒得再去翻SampleID.csv了。</p>
+<h1 id="2020-10-21"><a href="#2020-10-21" class="headerlink" title="2020.10.21"></a>2020.10.21</h1><p>做了一下GSE34942和GSE35809的，无论如何批次效应也没有办法去除，我踏马直接气炸，为什么每次要么不能将两个数据集合并，要么不能用removebatcheffect，气死。</p>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>数据类型</th>
+<th>GPL平台</th>
+<th>进度</th>
+<th>分组类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GSE56807&amp;GSE63089</td>
+<td>RMA signal</td>
+<td>GPL5175</td>
+<td></td>
+<td>癌症组织/正常组织</td>
+</tr>
+<tr>
+<td>GSE34942&amp;GSE35809</td>
+<td>RMA signal</td>
+<td>GPL570</td>
+<td>已去除批次效应/表达矩阵/分组矩阵/比较矩阵已经做完 （？你怎么这么奇怪）</td>
+<td>地区</td>
+</tr>
+<tr>
+<td>GSE15456&amp;GSE15459&amp;GSE47007</td>
+<td>MAS 5.0 signal</td>
+<td>GPL96(GSE15456),GPL570(GSE15459),GPL8300(GSE47007)</td>
+<td></td>
+<td>地区</td>
+</tr>
+<tr>
+<td>GSE118916</td>
+<td>RMA signal</td>
+<td>GPL15207</td>
+<td>表达量矩阵/分组矩阵/比较矩阵已经做完</td>
+<td>癌症+癌旁</td>
+</tr>
+<tr>
+<td>GSE22084</td>
+<td>lowess-normalized cy5/cy3 log2 ratio</td>
+<td>GPL6480</td>
+<td></td>
+<td>癌症+癌旁</td>
+</tr>
+<tr>
+<td>GSE27342</td>
+<td>Quantile normalized data</td>
+<td>GPL5175</td>
+<td></td>
+<td>癌症+癌旁</td>
+</tr>
+<tr>
+<td>GSE13911&amp;GSE19826</td>
+<td>MAS 5.0 signal</td>
+<td>GPL570</td>
+<td>不考虑地区貌似筛选出来的数据还是可以看的</td>
+<td>癌症+癌旁，再算上地区</td>
+</tr>
+<tr>
+<td>GSE26899&amp;GSE26901</td>
+<td>log2 transformed signal intensity(这已经是log2值了那就可以略过了8)</td>
+<td>GPL6947</td>
+<td>已去除批次效应/表达量矩阵/分组矩阵/比较矩阵已经做完</td>
+<td>癌症+癌旁</td>
+</tr>
+</tbody></table>
 <h1 id="2020-09-18"><a href="#2020-09-18" class="headerlink" title="2020.09.18"></a>2020.09.18</h1><p>划水好几天后重新来看看分组：</p>
 <ol>
-<li><strong>GSE56807+GSE63089</strong>（VALUE类型 RMA signal） 地区都是China，以<em>癌症组织/正常组织</em>作为分组。</li>
+<li><strong>GSE56807+GSE63089</strong>（俩GPL5175）（VALUE类型 RMA signal） 地区都是China，以<em>癌症组织/正常组织</em>作为分组。</li>
 <li><strong>GSE34942+GSE35809</strong>（VALUE类型 RMA signal），以<em>样本来源地</em>作为分组</li>
 <li><strong>GSE15456+GSE15459+GSE47007</strong>（VALUE类型 MAS5.0 signal），以<em>样本来源地</em>作为分组，**<em>注意GSE15459内部分样本被排除w**</em></li>
 <li><strong>GSE118916</strong>（value类型：RMA signal intensity，但是有负数不好判断这到底是个什么东西），<strong>GSE22804</strong>（value类型：lowess- normalized log2 Cy5/Cy3 ratio，貌似可以直接根据ratio值提取差异表达基因），<strong>GSE27342</strong>(value类型：Quantile normalized gene level expression values from PLIER)，这三个set自己和自己分析去吧。</li>
