@@ -227,7 +227,7 @@
 <h1 id="2020-11-01"><a href="#2020-11-01" class="headerlink" title="2020.11.01"></a>2020.11.01</h1><p>但是GPL5175的重注释做到现在也还没做出来:D</p>
 <h1 id="2020-10-24"><a href="#2020-10-24" class="headerlink" title="2020.10.24"></a>2020.10.24</h1><p>癌症组织vs癌症组织可以筛查出10000多个差异基因，绝了！难道癌症组织vs癌症组织需要看二者共表达的基因吗（</p>
 <h1 id="2020-10-23"><a href="#2020-10-23" class="headerlink" title="2020.10.23"></a>2020.10.23</h1><p>昨天一时上头搞得GSE26899和GSE26901的表达矩阵&amp;分组矩阵&amp;比较矩阵也都做完了。</p>
-<pre><code class="hljs r">x_merge = cbind(x1[cg,],x2[cg,])</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_merge = cbind(x1[cg,],x2[cg,])</span><br></pre></td></tr></table></figure>
 
 <p>这段坑爹的代码让我换成了subset形式，但这样做出来的数据格式就是large matrix，不知道对实验结果会不会有什么影响。</p>
 <p>剩下的分组要么是单分组，要么是GPL比较友好的数据集，要么就是GPL5175……草，GPL5175这个东西应该怎么做。</p>
@@ -248,7 +248,7 @@
 <td>GSE56807&amp;GSE63089</td>
 <td>RMA signal</td>
 <td>GPL5175</td>
-<td></td>
+<td>Vans</td>
 <td>癌症组织/正常组织</td>
 </tr>
 <tr>
@@ -412,29 +412,19 @@
 </li>
 <li><p>Series Matrix Files：表达矩阵 可以读进R（read.table())</p>
 <p><em>如何用GEOquery从GEO上下载想要的表达矩阵</em></p>
-<p>&lt;!–hexoPostRenderEscape:<pre><code class="hljs R"><span class="hljs-comment">#安装GEOquery</span><br><span class="hljs-keyword">if</span>(!require.namespace(<span class="hljs-string">&quot;BiocManager&quot;</span>,quietly = TURE))<br> install.packages(<span class="hljs-string">&quot;BiocManager&quot;</span>)<br>BiocManager::install(<span class="hljs-string">&quot;GEOquery&quot;</span>)</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装GEOquery</span></span><br><span class="line"><span class="keyword">if</span>(!require.namespace(<span class="string">&quot;BiocManager&quot;</span>,quietly = TURE))</span><br><span class="line">    install.packages(<span class="string">&quot;BiocManager&quot;</span>)</span><br><span class="line">BiocManager::install(<span class="string">&quot;GEOquery&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#拿gds858举个例子</span></span><br><span class="line">options(warn = -<span class="number">1</span>)</span><br><span class="line">supressMessages(<span class="keyword">library</span>(GEOquery))</span><br><span class="line">gds858 &lt;- getGEO(<span class="string">&#x27;GDS858&#x27;</span>,destdir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">names(Meta(gds858))<span class="comment">#Meta得到描述信息</span></span><br><span class="line">table(Table(gds858))<span class="comment">#Table得到表达矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可以用GDS2eSet函数转变为expression set对象</span></span><br><span class="line">eset &lt;- GDS2eSet(gds858,do.log2 = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
-<p><span class="hljs-comment">#拿gds858举个例子</span><br>options(warn = -<span class="hljs-number">1</span>)<br>supressMessages(<span class="hljs-keyword">library</span>(GEOquery))<br>gds858 &lt;- getGEO(<span class="hljs-string">&#x27;GDS858&#x27;</span>,destdir = <span class="hljs-string">&#x27;.&#x27;</span>)<br>names(Meta(gds858))<span class="hljs-comment">#Meta得到描述信息</span><br>table(Table(gds858))<span class="hljs-comment">#Table得到表达矩阵</span></p>
-<p><span class="hljs-comment">#可以用GDS2eSet函数转变为expression set对象</span><br>eset &lt;- GDS2eSet(gds858,do.log2 = <span class="hljs-literal">TRUE</span>)</code></pre>:hexoPostRenderEscape–&gt;</p>
 <h3 id="R语言-Limma包的安装流程"><a href="#R语言-Limma包的安装流程" class="headerlink" title="R语言 Limma包的安装流程"></a>R语言 Limma包的安装流程</h3><p>Limma包：Microarray</p>
 <p>affy包：affymetrix芯片</p>
 <p>lumi包：illumina芯片</p>
 <p><strong><em>Limma: Linear Models for Microarray and RNA-Seq Data</em></strong></p>
 <p><strong>Bioconductor网站：<a target="_blank" rel="noopener" href="http://www.bioconductor.org/">http://www.bioconductor.org/</a></strong></p>
 <p><strong><em>注：用R studio安装貌似会出现一些问题，推荐用R Gui（难道是我没配置镜像站点？Why？）</em></strong></p>
-<pre><code class="hljs R"><span class="hljs-keyword">if</span> (!requireNamespace(<span class="hljs-string">&quot;BiocManager&quot;</span>, quietly = <span class="hljs-literal">TRUE</span>))
-    install.packages(<span class="hljs-string">&quot;BiocManager&quot;</span>)
-BiocManager::install()
-
-<span class="hljs-comment">#安装Limma</span>
-BiocManager::install(c(<span class="hljs-string">&quot;limma&quot;</span>))
-<span class="hljs-comment">#or</span>
-BiocManager::install(<span class="hljs-string">&quot;limma&quot;</span>)
-
-<span class="hljs-comment">#打开Limma Users Guide</span>
-<span class="hljs-keyword">library</span>(limma)
-limmaUsersGuide()<span class="hljs-comment">#limma包的说明书</span></code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!requireNamespace(<span class="string">&quot;BiocManager&quot;</span>, quietly = <span class="literal">TRUE</span>))</span><br><span class="line">    install.packages(<span class="string">&quot;BiocManager&quot;</span>)</span><br><span class="line">BiocManager::install()</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装Limma</span></span><br><span class="line">BiocManager::install(c(<span class="string">&quot;limma&quot;</span>))</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">BiocManager::install(<span class="string">&quot;limma&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打开Limma Users Guide</span></span><br><span class="line"><span class="keyword">library</span>(limma)</span><br><span class="line">limmaUsersGuide()<span class="comment">#limma包的说明书</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="引用Limma"><a href="#引用Limma" class="headerlink" title="引用Limma"></a>引用Limma</h4><p>using Limma for 差异表达分析：</p>
 <p>Phipson, B, Lee, S, Majewski, IJ, Alexander, WS, and Smyth, GK (2016). Robust hyperparameter estimation protects against hypervariable genes and improves power to detect differential expression. <em>Annals of Applied Statistics</em> 10(2), 946–963.</p>
@@ -442,106 +432,7 @@ limmaUsersGuide()<span class="hljs-comment">#limma包的说明书</span></code><
 <p>Law, CW, Chen, Y, Shi, W, and Smyth, GK (2014). Voom: precision weights unlock linear model analysis tools for RNA-seq read counts. <em>Genome Biology</em> 15, R29.</p>
 <h4 id="用Limma包对芯片数据做差异分析"><a href="#用Limma包对芯片数据做差异分析" class="headerlink" title="用Limma包对芯片数据做差异分析"></a>用Limma包对芯片数据做差异分析</h4><p>需要自己做好三个数据：</p>
 <p>①表达矩阵 ②分组矩阵 ③差异比较矩阵</p>
-<h5 id="基因表达矩阵-读取数据即可"><a href="#基因表达矩阵-读取数据即可" class="headerlink" title="基因表达矩阵 #读取数据即可"></a>基因表达矩阵 #读取数据即可</h5><pre><code class="hljs r"><span class="hljs-comment">#配上GEOquery</span>
-<span class="hljs-keyword">library</span>(GEOquery)
-gse19826 &lt;- getGEO(<span class="hljs-string">&#x27;GSE19826&#x27;</span>,destdir = <span class="hljs-string">&#x27;.&#x27;</span>)
-<span class="hljs-keyword">library</span>(limma)
-exprSet = read.table(<span class="hljs-string">&quot;GSE19826_series_matrix.txt.gz&quot;</span>,
-                     comment.char = <span class="hljs-string">&quot;!&quot;</span>,
-                     stringsAsFactors = <span class="hljs-literal">F</span>,
-                     header = <span class="hljs-literal">T</span>)
-<span class="hljs-comment">#Q：read.table的参数</span>
-rownames(exprSet) = exprSet[,<span class="hljs-number">1</span>]
-exprSet = exprSet[,-<span class="hljs-number">1</span>]
-
-<span class="hljs-comment">#以上全部作废</span>
-
-
-downGEO &lt;-<span class="hljs-keyword">function</span>(studyID,dest_dir)
-&#123;
-    <span class="hljs-keyword">library</span>(GEOquery)
-    estr &lt;-getGEO(GEO = studyID,
-                 destdir = dest_dir,
-                 getGPL = <span class="hljs-literal">TRUE</span>)
-    expr = exprs(estr[[<span class="hljs-number">1</span>]])
-    pdata = pdata(estr[[<span class="hljs-number">1</span>]])
-
-    write.csv(expr,paste0(studyID,<span class="hljs-string">&quot;_exprSet.csv&quot;</span>))
-   write.csv(pdata,paste0(studyID,<span class="hljs-string">&quot;_metadata.csv&quot;</span>))
-
-    <span class="hljs-keyword">return</span>(estr)
-&#125;
-downGEO(studyID =,dest_dir = <span class="hljs-string">&#x27;.&#x27;</span>)
-<span class="hljs-comment">#studyID就是你要下载的数据的GEO号，后面的不用管了，可以自动在文件存放目录生成表达矩阵和信息谱两种</span>
-
-<span class="hljs-comment">#进行ID转换 以GSE19826为例</span>
-
-<span class="hljs-keyword">library</span>(GEOquery)
-
-<span class="hljs-comment">#一个返回exprSet的函数 可能没啥用</span>
-get_exprSet &lt;- <span class="hljs-keyword">function</span>(studyID,dest_dir)&#123;
-  e_Set &lt;- getGEO(GEO = studyID,
-                  destdir = <span class="hljs-string">&#x27;.&#x27;</span>,
-                  getGPL = <span class="hljs-literal">F</span>)
-  expr_set = exprs(e_Set[[<span class="hljs-number">1</span>]])
-  <span class="hljs-keyword">return</span>(expr_set)
-&#125;
-downGEO(studyID = <span class="hljs-string">&#x27;GSE19826&#x27;</span>,dest_dir = <span class="hljs-string">&#x27;.&#x27;</span>)
-exprSet = get_exprSet(studyID = <span class="hljs-string">&#x27;GSE19826&#x27;</span>,
-                      dest_dir = <span class="hljs-string">&#x27;.&#x27;</span>)
-
-<span class="hljs-comment">#下面进行id转换</span>
-<span class="hljs-comment">#载入包</span>
-<span class="hljs-keyword">library</span>(hgu133plus2.db)
-ids = toTable(hgu133plus2SYMBOL)
-
-<span class="hljs-comment">#①筛选有用的探针和没用的探针</span>
-
-table(rownames(exprSet) %<span class="hljs-keyword">in</span>% ids$probe_id)
-exprSet = exprSet[rownames(exprSet)%<span class="hljs-keyword">in</span>% ids$probe_id]
-
-<span class="hljs-comment">#②将没用的探针筛掉 再选择有最大表达量的探针</span>
-ids = ids[match(rownames(exprSet),ids$probe_id),]
-tmp = by(exprSet,
-        ids$symbol,
-        <span class="hljs-keyword">function</span>(x) rownames(x)[which.max(rowMeans(x))])
-         )
-probes = as.character(tmp)
-exprSet = exprSet[rownames(exprSet) %<span class="hljs-keyword">in</span>% probes,]
-dim(exprSet)
-rownames(exprSet) = ids[match(rownames(exprSet),ids$probe_id),<span class="hljs-number">2</span>]
-
-<span class="hljs-comment">#boxplot的一个画法</span>
-exprSet[<span class="hljs-string">&#x27;PAX8&#x27;</span>,]
-boxplot(exprSet[<span class="hljs-string">&#x27;PAX8&#x27;</span>,])
-
-<span class="hljs-comment">#做分组，将癌症组织/非癌症组织分出来</span>
-<span class="hljs-comment">#首先把group_list分组条件做出来</span>
-get_pData &lt;- <span class="hljs-keyword">function</span>(studyID,dest_dir)&#123;
-  <span class="hljs-keyword">library</span>(GEOquery)
-  a &lt;- getGEO(GEO = studyID,destdir = dest_dir)
-  pData = pData(a[[<span class="hljs-number">1</span>]])
-  <span class="hljs-keyword">return</span>(pData)
-&#125;
-pData = get_pData(studyID = <span class="hljs-string">&#x27;GSE19826&#x27;</span>,
-                  dest_dir = <span class="hljs-string">&#x27;.&#x27;</span>)
-<span class="hljs-comment">#pData的第39列为癌症组织/非癌症组织的信息</span>
-group_list = as.character(pData[,<span class="hljs-number">39</span>])
-
-<span class="hljs-comment">#正式进行分组</span>
-<span class="hljs-keyword">library</span>(reshape2)
-exprSet_L = melt(exprSet)
-colnames(exprSet_L) = c(<span class="hljs-string">&#x27;probe&#x27;</span>,<span class="hljs-string">&#x27;sample&#x27;</span>,<span class="hljs-string">&#x27;value&#x27;</span>)
-exprSet_L$group = rep(group_list,each = nrow(exprSet))
-head(exprSet_L)
-
-<span class="hljs-comment">#载入limma包</span>
-<span class="hljs-comment">#制作分组矩阵</span>
-<span class="hljs-keyword">library</span>(limma)
-design &lt;- model.matrix(~<span class="hljs-number">0</span> + factor(group_list))
-colnames(design) = levels(factor(group_list))
-rownames(design) = colnames(exprSet)
-</code></pre>
+<h5 id="基因表达矩阵-读取数据即可"><a href="#基因表达矩阵-读取数据即可" class="headerlink" title="基因表达矩阵 #读取数据即可"></a>基因表达矩阵 #读取数据即可</h5><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#配上GEOquery</span></span><br><span class="line"><span class="keyword">library</span>(GEOquery)</span><br><span class="line">gse19826 &lt;- getGEO(<span class="string">&#x27;GSE19826&#x27;</span>,destdir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"><span class="keyword">library</span>(limma)</span><br><span class="line">exprSet = read.table(<span class="string">&quot;GSE19826_series_matrix.txt.gz&quot;</span>,</span><br><span class="line">                     comment.char = <span class="string">&quot;!&quot;</span>,</span><br><span class="line">                     stringsAsFactors = <span class="literal">F</span>,</span><br><span class="line">                     header = <span class="literal">T</span>)</span><br><span class="line"><span class="comment">#Q：read.table的参数</span></span><br><span class="line">rownames(exprSet) = exprSet[,<span class="number">1</span>]</span><br><span class="line">exprSet = exprSet[,-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#以上全部作废</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">downGEO &lt;-<span class="keyword">function</span>(studyID,dest_dir)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">library</span>(GEOquery)</span><br><span class="line">    estr &lt;-getGEO(GEO = studyID,</span><br><span class="line">                 destdir = dest_dir,</span><br><span class="line">                 getGPL = <span class="literal">TRUE</span>)</span><br><span class="line">    expr = exprs(estr[[<span class="number">1</span>]])</span><br><span class="line">    pdata = pdata(estr[[<span class="number">1</span>]])</span><br><span class="line">    </span><br><span class="line">    write.csv(expr,paste0(studyID,<span class="string">&quot;_exprSet.csv&quot;</span>))</span><br><span class="line">   write.csv(pdata,paste0(studyID,<span class="string">&quot;_metadata.csv&quot;</span>))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span>(estr)</span><br><span class="line">&#125;</span><br><span class="line">downGEO(studyID =,dest_dir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"><span class="comment">#studyID就是你要下载的数据的GEO号，后面的不用管了，可以自动在文件存放目录生成表达矩阵和信息谱两种</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#进行ID转换 以GSE19826为例</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">library</span>(GEOquery)</span><br><span class="line"></span><br><span class="line"><span class="comment">#一个返回exprSet的函数 可能没啥用</span></span><br><span class="line">get_exprSet &lt;- <span class="keyword">function</span>(studyID,dest_dir)&#123;</span><br><span class="line">  e_Set &lt;- getGEO(GEO = studyID,</span><br><span class="line">                  destdir = <span class="string">&#x27;.&#x27;</span>,</span><br><span class="line">                  getGPL = <span class="literal">F</span>)</span><br><span class="line">  expr_set = exprs(e_Set[[<span class="number">1</span>]])</span><br><span class="line">  <span class="keyword">return</span>(expr_set)</span><br><span class="line">&#125;</span><br><span class="line">downGEO(studyID = <span class="string">&#x27;GSE19826&#x27;</span>,dest_dir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">exprSet = get_exprSet(studyID = <span class="string">&#x27;GSE19826&#x27;</span>,</span><br><span class="line">                      dest_dir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面进行id转换</span></span><br><span class="line"><span class="comment">#载入包</span></span><br><span class="line"><span class="keyword">library</span>(hgu133plus2.db)</span><br><span class="line">ids = toTable(hgu133plus2SYMBOL)</span><br><span class="line"></span><br><span class="line"><span class="comment">#①筛选有用的探针和没用的探针</span></span><br><span class="line"></span><br><span class="line">table(rownames(exprSet) %<span class="keyword">in</span>% ids$probe_id)</span><br><span class="line">exprSet = exprSet[rownames(exprSet)%<span class="keyword">in</span>% ids$probe_id]</span><br><span class="line"></span><br><span class="line"><span class="comment">#②将没用的探针筛掉 再选择有最大表达量的探针</span></span><br><span class="line">ids = ids[match(rownames(exprSet),ids$probe_id),]</span><br><span class="line">tmp = by(exprSet,</span><br><span class="line">        ids$symbol,</span><br><span class="line">        <span class="keyword">function</span>(x) rownames(x)[which.max(rowMeans(x))])</span><br><span class="line">         )</span><br><span class="line">probes = as.character(tmp)</span><br><span class="line">exprSet = exprSet[rownames(exprSet) %<span class="keyword">in</span>% probes,]</span><br><span class="line">dim(exprSet)</span><br><span class="line">rownames(exprSet) = ids[match(rownames(exprSet),ids$probe_id),<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#boxplot的一个画法</span></span><br><span class="line">exprSet[<span class="string">&#x27;PAX8&#x27;</span>,]</span><br><span class="line">boxplot(exprSet[<span class="string">&#x27;PAX8&#x27;</span>,])</span><br><span class="line"></span><br><span class="line"><span class="comment">#做分组，将癌症组织/非癌症组织分出来</span></span><br><span class="line"><span class="comment">#首先把group_list分组条件做出来</span></span><br><span class="line">get_pData &lt;- <span class="keyword">function</span>(studyID,dest_dir)&#123;</span><br><span class="line">  <span class="keyword">library</span>(GEOquery)</span><br><span class="line">  a &lt;- getGEO(GEO = studyID,destdir = dest_dir)</span><br><span class="line">  pData = pData(a[[<span class="number">1</span>]])</span><br><span class="line">  <span class="keyword">return</span>(pData)</span><br><span class="line">&#125;</span><br><span class="line">pData = get_pData(studyID = <span class="string">&#x27;GSE19826&#x27;</span>,</span><br><span class="line">                  dest_dir = <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"><span class="comment">#pData的第39列为癌症组织/非癌症组织的信息</span></span><br><span class="line">group_list = as.character(pData[,<span class="number">39</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#正式进行分组</span></span><br><span class="line"><span class="keyword">library</span>(reshape2)</span><br><span class="line">exprSet_L = melt(exprSet)</span><br><span class="line">colnames(exprSet_L) = c(<span class="string">&#x27;probe&#x27;</span>,<span class="string">&#x27;sample&#x27;</span>,<span class="string">&#x27;value&#x27;</span>)</span><br><span class="line">exprSet_L$group = rep(group_list,each = nrow(exprSet))</span><br><span class="line">head(exprSet_L)</span><br><span class="line"></span><br><span class="line"><span class="comment">#载入limma包</span></span><br><span class="line"><span class="comment">#制作分组矩阵</span></span><br><span class="line"><span class="keyword">library</span>(limma)</span><br><span class="line">design &lt;- model.matrix(~<span class="number">0</span> + factor(group_list))</span><br><span class="line">colnames(design) = levels(factor(group_list))</span><br><span class="line">rownames(design) = colnames(exprSet)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><img src="C:\Users\Administrator\Documents\Rplot.png" srcset="/img/loading.gif" alt="Rplot"></p>
 <p><em>注：PAX8基因在这些芯片数据中的boxplot如图所示</em></p>
