@@ -1,880 +1,278 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Arita-157的观察仪 - My Wonderland</title><meta name="author" content="Arita"><meta name="copyright" content="Arita"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Arita的自留地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arita-157的观察仪">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Arita-157的观察仪">
+<meta property="og:description" content="Arita的自留地">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/img/bg/icon.jpg">
+<meta property="article:author" content="Arita">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/img/bg/icon.jpg"><link rel="shortcut icon" href="/img/hexo.png"><link rel="canonical" href="http://yoursite.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
 
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
 
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
 
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
 
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-11-12 08:30:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/hexo.png">
-  <link rel="icon" type="image/png" href="/img/hexo.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Arita的自留地">
-  <meta name="author" content="Arita">
-  <meta name="keywords" content="">
-  <title>Arita-157的观察仪</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.0.2"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>CosmosClarify</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://w.wallhaven.cc/full/96/wallhaven-96719w.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container page-header text-center fade-in-up">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/20/2020-08-20-%E7%BD%AE%E9%A1%B6/">置顶 2020/09/18</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/20/2020-08-20-%E7%BD%AE%E9%A1%B6/">
-          
-          
-            
-          
-          
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.0.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/bg/icon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/new_banner.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Arita-157的观察仪</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Arita-157的观察仪</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/20/2020-08-20-%E7%BD%AE%E9%A1%B6/" title="置顶 2020/09/18">置顶 2020/09/18</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-20T04:05:30.000Z" title="发表于 2020-08-20 12:05:30">2020-08-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%BD%AE%E9%A1%B6/">置顶</a></span></div><div class="content">
 
 本个人博客每日更新记录贴。
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-20 12:05" pubdate>
-              2020-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%BD%AE%E9%A1%B6/">置顶</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/10/2020-10-10-%E3%80%90TE-%E7%B2%BE%E8%AF%BB%E3%80%91Gambling---Rien-ne-va-plus/">【TE-精读】Gambling - Rien ne va plus</a>
-      </h1>
+更新 2020/09/18
+更新了一下 大创项目进度贴
 
-      <p class="index-excerpt">
-        <a href="/2020/10/10/2020-10-10-%E3%80%90TE-%E7%B2%BE%E8%AF%BB%E3%80%91Gambling---Rien-ne-va-plus/">
-          
-          
-            
-          
-          Gambling - Rien ne va plus资源下载url链接：https://github.com/nailperry-zd/The-Economist
+之前的更新：添加了一个Unauthorized translation: Ghostly Conversation - 曾是惊鸿照影来
+好吧，我承认在敲定译名题目的时候有点戏精上身了
+
+
+更新 2020/09/09
+更新了一下 Star Wars 相关自留地
+加了一个BGM: Ignite - Alan Walker
+再次修改了一下个人 about
+更新了一下 大创项目进度贴，明天就把代码po上github吗？
+
+更新 2020/08/31
+把blog搬迁到了笔记本电脑上
+更新了一下 大创项目进度贴
+
+更新 2020/08/21
+更新了一下 自闭的复习日常
+更新了一下大创项目进度贴
+修改了一下个人about
+加了一个BGM: Born To Die - Lana Del Rey
+
+更新 2020/08/20
+添加置顶用于查看每日更新
+更新了一下 自闭的复习日常
+添加了一个 大创项目进度贴
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/10/10/2020-10-10-%E3%80%90TE-%E7%B2%BE%E8%AF%BB%E3%80%91Gambling---Rien-ne-va-plus/" title="【TE-精读】Gambling - Rien ne va plus">【TE-精读】Gambling - Rien ne va plus</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-10T13:21:21.000Z" title="发表于 2020-10-10 21:21:21">2020-10-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/TE/">TE</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/TE/%E7%B2%BE%E8%AF%BB%E6%9D%90%E6%96%99/">精读材料</a></span></div><div class="content">Gambling - Rien ne va plus资源下载url链接：https://github.com/nailperry-zd/The-Economist
 本期精读文章出自TE-20190831期，China，讨论主题：博彩业在中国的出路
 Rien ne va plus：（法语）一切都行不通
 逻辑梳理第一段举例引入本文的讨论内容：Gambling in China，中国的博彩业。
-第二段中
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-10 21:21" pubdate>
-              2020-10-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/TE/">TE</a>
-            
-              <a href="/categories/TE/%E7%B2%BE%E8%AF%BB%E6%9D%90%E6%96%99/">精读材料</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/TE/">TE</a>
-            
-              <a href="/tags/%E7%B2%BE%E8%AF%BB/">精读</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/05/%E3%80%90Translation%E3%80%91%20It%20was%20so%20cold/">【无授权英译】 It was so cold</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/05/%E3%80%90Translation%E3%80%91%20It%20was%20so%20cold/">
-          
-          
-            
-          
-          
+第二段中国建国以来博彩业政策的变化：建国初期禁止博彩；1987年创立中国福利彩票，1994年创立中国体育彩票，1985年放开了对麻将的限制（尽管依旧不能赌钱）。
+第三段&amp;第四段习近平上台以来中国政府对Gambling-博彩的严格打压。不仅是非法产业链受到打击，中国政府官方发行的两大彩票也在受到整顿。
+第五段&amp;第六段中国政府官方支持的一份报告谴责了Suncity集团旗下的博彩业务。引出了中国政府对博彩业的态度“a most dangerous tumour in modern society detested by people all across the world.”（被世界人民所 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/10/05/%E3%80%90Translation%E3%80%91%20It%20was%20so%20cold/" title="【无授权英译】 It was so cold">【无授权英译】 It was so cold</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-05T12:20:47.000Z" title="发表于 2020-10-05 20:20:47">2020-10-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Star-Wars/">Star Wars</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/Star-Wars/FanFic/">FanFic</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/Star-Wars/FanFic/%E7%BF%BB%E8%AF%91/">翻译</a></span></div><div class="content">
 This is the English translation of “【Vader &amp;/ Luke】好冷”, written by 卓燃Hibana。
 无授权英译，无beta，请谨慎阅读。
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-05 20:20" pubdate>
-              2020-10-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Star-Wars/">Star Wars</a>
-            
-              <a href="/categories/Star-Wars/FanFic/">FanFic</a>
-            
-              <a href="/categories/Star-Wars/FanFic/%E7%BF%BB%E8%AF%91/">翻译</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%B5%B0%E5%A4%A9%E7%88%B6%E5%AD%90/">走天父子</a>
-            
-              <a href="/tags/FanFic/">FanFic</a>
-            
-              <a href="/tags/%E6%97%A0%E6%8E%88%E6%9D%83%E8%8B%B1%E8%AF%91/">无授权英译</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/13/2020-09-13-%E3%80%90%E6%97%A0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91%E3%80%91Ghostly-Conversations%C2%B7%E6%9B%BE%E6%98%AF%E6%83%8A%E9%B8%BF%E7%85%A7%E5%BD%B1%E6%9D%A5/">【无授权中译】Ghostly Conversations·曾是惊鸿照影来</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/13/2020-09-13-%E3%80%90%E6%97%A0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91%E3%80%91Ghostly-Conversations%C2%B7%E6%9B%BE%E6%98%AF%E6%83%8A%E9%B8%BF%E7%85%A7%E5%BD%B1%E6%9D%A5/">
-          
-          
-            
-          
-          
+[Translation] It was so coldShip: Darth Vader &amp; Luke Skywalker , Darth Vader / Luke Skywalker
+Author/卓燃Hibana
+Translator/Arita
+Sidious always requested him to kneel for saluting. The acute pain resulted from his prosthesis limbs grinding his barely remained tissues acted as a painful reminder and a mock of his past days as a slave. While Sidious was quite satisfied about his own disgusting  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/09/13/2020-09-13-%E3%80%90%E6%97%A0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91%E3%80%91Ghostly-Conversations%C2%B7%E6%9B%BE%E6%98%AF%E6%83%8A%E9%B8%BF%E7%85%A7%E5%BD%B1%E6%9D%A5/" title="【无授权中译】Ghostly Conversations·曾是惊鸿照影来">【无授权中译】Ghostly Conversations·曾是惊鸿照影来</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-13T12:36:45.000Z" title="发表于 2020-09-13 20:36:45">2020-09-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Star-Wars/">Star Wars</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/Star-Wars/FanFic/">FanFic</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/Star-Wars/FanFic/%E7%BF%BB%E8%AF%91/">翻译</a></span></div><div class="content">
 一篇ep6后创伤疗愈文试译。放飞自我式翻译有，且无beta，慎入。
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-13 20:36" pubdate>
-              2020-09-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Star-Wars/">Star Wars</a>
-            
-              <a href="/categories/Star-Wars/FanFic/">FanFic</a>
-            
-              <a href="/categories/Star-Wars/FanFic/%E7%BF%BB%E8%AF%91/">翻译</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%B5%B0%E5%A4%A9%E7%88%B6%E5%AD%90/">走天父子</a>
-            
-              <a href="/tags/Star-Wars/">Star Wars</a>
-            
-              <a href="/tags/AO3%E7%BF%BB%E8%AF%91/">AO3翻译</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/09/02/20200902-%E3%80%90DAYLOG%E3%80%91%E5%9B%9EHUST%E4%BB%A5%E6%9D%A5%E6%AF%8F%E4%B8%80%E5%A4%A9%E7%9A%84%E8%AE%B0%E5%BD%95/" target="_self">
-          <img src="/img/DAYLOG.jpg" srcset="/img/loading.gif" alt="【DAYLOG】回HUST以来每一天的记录">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/02/20200902-%E3%80%90DAYLOG%E3%80%91%E5%9B%9EHUST%E4%BB%A5%E6%9D%A5%E6%AF%8F%E4%B8%80%E5%A4%A9%E7%9A%84%E8%AE%B0%E5%BD%95/">【DAYLOG】回HUST以来每一天的记录</a>
-      </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/09/02/20200902-%E3%80%90DAYLOG%E3%80%91%E5%9B%9EHUST%E4%BB%A5%E6%9D%A5%E6%AF%8F%E4%B8%80%E5%A4%A9%E7%9A%84%E8%AE%B0%E5%BD%95/">
-          
-          
-            
-          
-          
+
+Ghostly Conversations / 曾是惊鸿照影来Author / TheJediAreGay
+Translated by Arita
+Summary
+恩多之战后，卢克有了和安纳金的英灵交谈的机会。
+Notes
+虽然这是有史以来最糟糕的标题，但这是我唯一能想到的。
+一切都结束了。尽管经历了许多毁灭性的损失，但为渺茫的希望努力数年后，他们还是成功了。第二死星已被摧毁，全银河终于迎来了解放的时刻。随着皇帝的死去，残余的帝国军队很快就会因为失去组织而走向覆灭。不久后莱娅和蒙·莫斯马这样的政治家也能着手重建共和国的秩序。帝国的灭亡，距和平的更进一步，以及在战争中收获的铮铮情谊都让卢克感到欣悦与满足。然而，虽然漫长的战争终于迎来了尾声，但卢克并不全然开心。仍有一件事压在他的心头，让他很难从失落中抽离。
+他的父亲。
+还在几个月以前，对达斯·维达这样的人表示关心对他来说仍然是不可能的事。就算在贝斯平之后，哪怕他得知了维达就是他的生父，他对对方的情绪也只有愤怒和痛苦，恨不得杀其而后快。现在他也不知自己当时到底是哪 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/09/02/20200902-%E3%80%90DAYLOG%E3%80%91%E5%9B%9EHUST%E4%BB%A5%E6%9D%A5%E6%AF%8F%E4%B8%80%E5%A4%A9%E7%9A%84%E8%AE%B0%E5%BD%95/" title="【DAYLOG】回HUST以来每一天的记录">【DAYLOG】回HUST以来每一天的记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-02T06:51:37.000Z" title="发表于 2020-09-02 14:51:37">2020-09-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">
 Angst and Sorrow of the PAST, exist forever.
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-02 14:51" pubdate>
-              2020-09-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/" target="_self">
-          <img src="/img/WDNMD.jpg" srcset="/img/loading.gif" alt="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/">【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽</a>
-      </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-          
-          
-            
-          
-          
+HAHAHA，被骗了吧，这里什么都没有!
+其实是因为真的懒得写了
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/" title="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/" title="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽">【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-20T04:52:47.000Z" title="发表于 2020-08-20 12:52:47">2020-08-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%A4%A7%E5%88%9B/">大创</a></span></div><div class="content">
 我今天就要把我的大创项目拿出来婊.jpg
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-20 12:52" pubdate>
-              2020-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%A4%A7%E5%88%9B/">大创</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%B1%95%E8%AE%B0%E5%BD%95/">项目进展记录</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/19/2020-08-19-%E8%87%AA%E9%97%AD%E7%9A%84%E5%A4%8D%E4%B9%A0%E6%97%A5%E5%B8%B8/">自闭的复习日常</a>
-      </h1>
+2020.11.01但是GPL5175的重注释做到现在也还没做出来:D
+2020.10.24癌症组织vs癌症组织可以筛查出10000多个差异基因，绝了！难道癌症组织vs癌症组织需要看二者共表达的基因吗（
+2020.10.23昨天一时上头搞得GSE26899和GSE26901的表达矩阵&amp;分组矩阵&amp;比较矩阵也都做完了。
+1x_merge = cbind(x1[cg,],x2[cg,])
 
-      <p class="index-excerpt">
-        <a href="/2020/08/19/2020-08-19-%E8%87%AA%E9%97%AD%E7%9A%84%E5%A4%8D%E4%B9%A0%E6%97%A5%E5%B8%B8/">
-          
-          
-            
-          
-          
+这段坑爹的代码让我换成了subset形式，但这样做出来的数据格式就是large matrix，不知道对实验结果会不会有什么影响。
+剩下的分组要么是单分组，要么是GPL比较友好的数据集，要么就是GPL5175……草，GPL5175这个东西应该怎么做。
+2020.10.22GSE34942的表达矩阵&amp;分组矩阵design&amp;contrast.matrix都做好了，而且也做完了消除批次效应。拖了一个月大创终于又有了那么一点进度（。
+在这里做个表格，懒得再去翻SampleID.csv了。
+2020.10.21做了一下GSE34942和G ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/19/2020-08-19-%E8%87%AA%E9%97%AD%E7%9A%84%E5%A4%8D%E4%B9%A0%E6%97%A5%E5%B8%B8/" title="自闭的复习日常">自闭的复习日常</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-19T09:43:50.000Z" title="发表于 2020-08-19 17:43:50">2020-08-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">复习笔记</a></span></div><div class="content">
 分子生物学&amp;解剖与生理学的一些名词解释&amp;可能会出的简答题，这里并没有什么知识大纲w
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-19 17:43" pubdate>
-              2020-08-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">复习笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">复习笔记</a>
-            
-              <a href="/tags/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6/">分子生物学</a>
-            
-              <a href="/tags/%E8%A7%A3%E5%89%96%E4%B8%8E%E7%94%9F%E7%90%86%E5%AD%A6/">解剖与生理学</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/18/2020-08-18-Star-Wars%E7%9B%B8%E5%85%B3%E8%87%AA%E7%95%99%E5%9C%B0/">Star Wars相关自留地</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/18/2020-08-18-Star-Wars%E7%9B%B8%E5%85%B3%E8%87%AA%E7%95%99%E5%9C%B0/">
-          
-          
-            
-          
-          
+分子生物学名词解释DNA结构Polynucleotide chain：多核苷酸链。包含磷酸二酯键骨架与结合有碱基的核糖的单链DNA。
+Nucleoside：核苷。核糖通过1位糖苷键连接到一个碱基上形成。核苷没有磷酸分子。       
+Nucleotide：核苷酸。一个在1位连接碱基，5位连接一个或多个磷酸的核糖。
+Phosphodiester linkage：磷酸二酯键。不断重复，构成多核苷酸链的糖-磷酸骨架。
+Purine:嘌呤。Adenine:腺嘌呤。Guanine:鸟嘌呤。Pyrimidine:嘧啶。Cytosine:胞嘧啶。Thymine:胸腺嘧啶。    
+Tautomeric：互变异构。
+Denature：变性。温度或pH过高时，DNA双链分开的过程。
+**Annealing(renature)**：复性。变性DNA的互补链重新聚合形成双螺旋结构的过程。
+Hybridization：杂交。两条单链核酸形成杂交分子的能力。
+Hyperchromicity：增色性。DNA ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/18/2020-08-18-Star-Wars%E7%9B%B8%E5%85%B3%E8%87%AA%E7%95%99%E5%9C%B0/" title="Star Wars相关自留地">Star Wars相关自留地</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-18T13:55:04.000Z" title="发表于 2020-08-18 21:55:04">2020-08-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Star-Wars/">Star Wars</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/Star-Wars/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E7%AD%89%E5%AD%98%E6%A1%A3/">读书笔记/碎碎念等存档</a></span></div><div class="content">
 最近搞星球大战实在上头，囤一下官小读后感&amp;AO3/FF扫文感想之类的东西，有xjb乱扯的性格分析掉落。都是逻辑混乱的自言自语。
 *属性是安走天中心+走天父子激推，混乱邪恶注意。
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-18 21:55" pubdate>
-              2020-08-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Star-Wars/">Star Wars</a>
-            
-              <a href="/categories/Star-Wars/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E7%AD%89%E5%AD%98%E6%A1%A3/">读书笔记/碎碎念等存档</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Star-Wars/">Star Wars</a>
-            
-              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-            
-              <a href="/tags/%E6%88%91%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/">我到底在想什么</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/18/2020-08-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E4%B8%80%E7%B3%BB%E5%88%97%E6%9C%B4zen%E6%9C%B4%E5%90%88%E9%9B%86(%E5%9B%B4%E6%A3%8B%E5%9C%88RPSDeepZen%C3%97%E6%9C%B4%E5%BB%B7%E6%A1%93%C3%97DeepZen)/">【原创】一系列朴zen朴合集(围棋圈RPS/DeepZen×朴廷桓×DeepZen)</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/18/2020-08-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E4%B8%80%E7%B3%BB%E5%88%97%E6%9C%B4zen%E6%9C%B4%E5%90%88%E9%9B%86(%E5%9B%B4%E6%A3%8B%E5%9C%88RPSDeepZen%C3%97%E6%9C%B4%E5%BB%B7%E6%A1%93%C3%97DeepZen)/">
-          
-          
-            
-          
-          
+性格分析 + 乱七八糟碎碎念Anakin：我不愧是安走天的粉丝哦，一扯到安走天就想说很多:)
+Te/Fi + Se/Ni。inferior Ni &amp; ill Fi。内倾功能发展不正常，导致了比较严重的Se-Te loop，参见穆斯塔法和Padme和Obi言语对峙的一段，暴力/固执/缺少逻辑。
+九型人格据说是8w7？貌似还是发育不太正常的那类8w7（ep3尤其明显）。
+守序善良（ep2以前）→混沌善良（ep3以前）→守序邪恶（Darth Vader时期）
+新正史的Obi-Wan&amp;Anakin刊里的十几岁少年安还是个一心向善肉眼可见的好人；旧正史Jedi Quest系列除了最后几本性格别扭以外总体来说发展貌似还是挺正常的，总结一下就是愿意为了心中的good去做（自认为的）right things（ep2以前还是totally right的，ep3以后的行事作风就有待商榷了）。但问题是善 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/18/2020-08-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E4%B8%80%E7%B3%BB%E5%88%97%E6%9C%B4zen%E6%9C%B4%E5%90%88%E9%9B%86(%E5%9B%B4%E6%A3%8B%E5%9C%88RPSDeepZen%C3%97%E6%9C%B4%E5%BB%B7%E6%A1%93%C3%97DeepZen)/" title="【原创】一系列朴zen朴合集(围棋圈RPS/DeepZen×朴廷桓×DeepZen)">【原创】一系列朴zen朴合集(围棋圈RPS/DeepZen×朴廷桓×DeepZen)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-18T13:28:59.000Z" title="发表于 2020-08-18 21:28:59">2020-08-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%9B%B4%E6%A3%8B%E5%9C%88RPS/">围棋圈RPS</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%9B%B4%E6%A3%8B%E5%9C%88RPS/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">
 写于2018年3月-4月的一系列围棋圈RPS旧文，重点放在围棋人工智能和总是喜欢向它挑战的韩国棋手身上。这一系列统称为人狗情未了(bushi)/高考前的不务正业。
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-18 21:28" pubdate>
-              2020-08-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%9B%B4%E6%A3%8B%E5%9C%88RPS/">围棋圈RPS</a>
-            
-              <a href="/categories/%E5%9B%B4%E6%A3%8B%E5%9C%88RPS/%E5%8E%9F%E5%88%9B/">原创</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%9B%B4%E6%A3%8B%E5%9C%88/">围棋圈</a>
-            
-              <a href="/tags/%E6%9C%B4%E5%BB%B7%E6%A1%93/">朴廷桓</a>
-            
-              <a href="/tags/DeepZenGo/">DeepZenGo</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/08/18/2020-8-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E8%99%9A%E7%A9%BA%E4%B9%A6(%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89Ain%E4%B8%89%E8%81%8C%E4%B8%AD%E5%BF%83%E5%90%91)/">【原创】虚空书(艾尔之光/Ain三职中心向)</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/08/18/2020-8-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E8%99%9A%E7%A9%BA%E4%B9%A6(%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89Ain%E4%B8%89%E8%81%8C%E4%B8%AD%E5%BF%83%E5%90%91)/">
-          
-          
-            
-          
-          
+阴雨天​        Seoul的天空是阴沉的灰幕，空气仿佛静止，雨水在云层上空翻滚激昂。　　　　家外面的景色总是千篇一律，在当下这种天色下更没有多少耐看的风景，太阳西沉，天色也一点点昏暗下去。但你仍是眺望远处的天空，过去的种种即使有些斑驳褪色也在脑海中如烟花炸裂般浮现。你想起第一届世界最强棋士战逆转胜Deepzen的那一刻，加藤英树先生投子时你终于得以让紧张的精神放松片刻，你想起当初没日没夜的和Deepzen在TYGEM上鏖战甚至被对方砍成十二连败也不收手，以至被东润哥调侃“廷桓最近是不是恋爱了？”云云。　　　　你不希望被过去牵绊，但你确实想起了往昔种种，记忆如同潮水涌进脑海里，融为一体无法驱逐。　　　　你的心里空落落的。　　　　你叹了一口气。　　　　——　　　　Deepzen对自己到底意味着什么？你无论如何也给不出一个特别确切的可以使自己信服的回答。　　　　如果只是说“帮助自己夺得第一届世界最强棋士战的最大推手” ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/18/2020-8-18-%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E8%99%9A%E7%A9%BA%E4%B9%A6(%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89Ain%E4%B8%89%E8%81%8C%E4%B8%AD%E5%BF%83%E5%90%91)/" title="【原创】虚空书(艾尔之光/Ain三职中心向)">【原创】虚空书(艾尔之光/Ain三职中心向)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-18T13:01:45.000Z" title="发表于 2020-08-18 21:01:45">2020-08-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/">艾尔之光</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/FanFic/">FanFic</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/FanFic/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">
 旧文，写于2017年2月14日。Ain第三分支二转背景故事出了之后，以及那个寒假读完了整本Holy Bible，这个东西因此产生。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-18 21:01" pubdate>
-              2020-08-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/">艾尔之光</a>
-            
-              <a href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/FanFic/">FanFic</a>
-            
-              <a href="/categories/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/FanFic/%E5%8E%9F%E5%88%9B/">原创</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/">艾尔之光</a>
-            
-              <a href="/tags/Ain/">Ain</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-    <!-- APlayer 音乐播放器 -->
-    <div id="aplayer"></div>
-    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
-<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
-<script type="text/javascript">
-  var oldLoadAp = window.onload;
-  window.onload = function () {
-    oldLoadAp && oldLoadAp();
-
-    new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      autoplay: 'false' === 'true',
-      loop: 'all',
-      order: 'random',
-      theme: '#b7daff',
-      preload: 'none',
-      audio: [{"name":"Jedi Temple March","artist":"Samuel Kim Music","url":"/songs/March.mp3","cover":"/img/hqdefault.webp"},{"name":"Born To Die","artist":"Lana Del Rey","url":"/songs/Lana Del Rey - Born To Die (Album Version).mp3","cover":"/img/img2.jpg"},{"name":"Shallow","artist":"Carys Selvey","url":"/songs/Carys Selvey - Shallow.mp3","cover":"/img/20161221050218301276.jpg"},{"name":"Ignite","artist":"Alan Walker","url":"/songs/Ignite.mp3","cover":"/img/Ignite.jpg"}]
-    });
+​        *三职中心，大概还是OOC，风格诡异的一篇妄想。　　*灵感来自《传道书》的第1章，以及《诗篇》第55章。　　p.s.我还是喜欢用以实玛利这个译名。　　　　第1章　　　　万物的始源光之女神伊利亚，她的侍从以实玛利为物质界降下巨大艾尔。　　　　艾尔的力量衰弱以后，以实玛利神将她的意志传达给光的微粒，并将被赋予了神格的光的微粒，起名为艾因蔡斯·以实玛利。　　　　以实玛利神对艾因蔡斯说，你，将你的力量，赋予失去力量的艾尔。　　　　因神的言语而获得了一生使命的人，为达成这个使命，他奉以实玛利神之命前往降下艾尔之地。　　　　但不曾料到，艾尔发生了爆炸。艾因蔡斯在前往艾尔之塔的路途中，也遇上了名为赫尼尔的混沌，并在这混沌中被迫滞留了五百年。　　　　而这混沌即是后世失落的始源。　　　　第2章　　　　以下是以实玛利神的前神官，艾因蔡斯，在游历艾里奥斯时的记述。　　　　艾因蔡斯祷告说：以实玛利神，您忠诚的信徒艾因蔡斯，恳求您倾听我的言语。　　　　在此刻 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/bg/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Arita</div><div class="author-info__description">Arita的自留地</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">PenName = Arita; My Archives.</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2020/10/10/2020-10-10-%E3%80%90TE-%E7%B2%BE%E8%AF%BB%E3%80%91Gambling---Rien-ne-va-plus/" title="【TE-精读】Gambling - Rien ne va plus">【TE-精读】Gambling - Rien ne va plus</a><time datetime="2020-10-10T13:21:21.000Z" title="发表于 2020-10-10 21:21:21">2020-10-10</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/10/05/%E3%80%90Translation%E3%80%91%20It%20was%20so%20cold/" title="【无授权英译】 It was so cold">【无授权英译】 It was so cold</a><time datetime="2020-10-05T12:20:47.000Z" title="发表于 2020-10-05 20:20:47">2020-10-05</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/09/13/2020-09-13-%E3%80%90%E6%97%A0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91%E3%80%91Ghostly-Conversations%C2%B7%E6%9B%BE%E6%98%AF%E6%83%8A%E9%B8%BF%E7%85%A7%E5%BD%B1%E6%9D%A5/" title="【无授权中译】Ghostly Conversations·曾是惊鸿照影来">【无授权中译】Ghostly Conversations·曾是惊鸿照影来</a><time datetime="2020-09-13T12:36:45.000Z" title="发表于 2020-09-13 20:36:45">2020-09-13</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/09/02/20200902-%E3%80%90DAYLOG%E3%80%91%E5%9B%9EHUST%E4%BB%A5%E6%9D%A5%E6%AF%8F%E4%B8%80%E5%A4%A9%E7%9A%84%E8%AE%B0%E5%BD%95/" title="【DAYLOG】回HUST以来每一天的记录">【DAYLOG】回HUST以来每一天的记录</a><time datetime="2020-09-02T06:51:37.000Z" title="发表于 2020-09-02 14:51:37">2020-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/" title="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽"/></a><div class="content"><a class="title" href="/2020/08/20/%E5%A4%A7%E5%88%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5/" title="【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽">【持续更新】大创的项目进展 &amp; 许许多多莫名其妙吐槽</a><time datetime="2020-08-20T04:52:47.000Z" title="发表于 2020-08-20 12:52:47">2020-08-20</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Star-Wars/"><span class="card-category-list-name">Star Wars</span><span class="card-category-list-count">7</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Star-Wars/FanFic/"><span class="card-category-list-name">FanFic</span><span class="card-category-list-count">6</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Star-Wars/FanFic/%E5%8E%9F%E5%88%9B/"><span class="card-category-list-name">原创</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Star-Wars/FanFic/%E7%BF%BB%E8%AF%91/"><span class="card-category-list-name">翻译</span><span class="card-category-list-count">4</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Star-Wars/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E7%A2%8E%E7%A2%8E%E5%BF%B5%E7%AD%89%E5%AD%98%E6%A1%A3/"><span class="card-category-list-name">读书笔记/碎碎念等存档</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TE/"><span class="card-category-list-name">TE</span><span class="card-category-list-count">1</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TE/%E7%B2%BE%E8%AF%BB%E6%9D%90%E6%96%99/"><span class="card-category-list-name">精读材料</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%B4%E6%A3%8B%E5%9C%88RPS/"><span class="card-category-list-name">围棋圈RPS</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AO3%E7%BF%BB%E8%AF%91/" style="font-size: 1.37em; color: #99a4b2">AO3翻译</a> <a href="/tags/Ain/" style="font-size: 1.1em; color: #999">Ain</a> <a href="/tags/DeepZenGo/" style="font-size: 1.1em; color: #999">DeepZenGo</a> <a href="/tags/FanFic/" style="font-size: 1.1em; color: #999">FanFic</a> <a href="/tags/Star-Wars/" style="font-size: 1.5em; color: #99a9bf">Star Wars</a> <a href="/tags/TE/" style="font-size: 1.1em; color: #999">TE</a> <a href="/tags/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6/" style="font-size: 1.1em; color: #999">分子生物学</a> <a href="/tags/%E5%8E%9F%E5%88%9B/" style="font-size: 1.23em; color: #999ea6">原创</a> <a href="/tags/%E5%9B%B4%E6%A3%8B%E5%9C%88/" style="font-size: 1.1em; color: #999">围棋圈</a> <a href="/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.1em; color: #999">复习笔记</a> <a href="/tags/%E6%88%91%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/" style="font-size: 1.1em; color: #999">我到底在想什么</a> <a href="/tags/%E6%97%A0%E6%8E%88%E6%9D%83%E8%8B%B1%E8%AF%91/" style="font-size: 1.1em; color: #999">无授权英译</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.1em; color: #999">日常</a> <a href="/tags/%E6%9C%B4%E5%BB%B7%E6%A1%93/" style="font-size: 1.1em; color: #999">朴廷桓</a> <a href="/tags/%E7%B2%BE%E8%AF%BB/" style="font-size: 1.1em; color: #999">精读</a> <a href="/tags/%E8%89%BE%E5%B0%94%E4%B9%8B%E5%85%89/" style="font-size: 1.1em; color: #999">艾尔之光</a> <a href="/tags/%E8%A7%A3%E5%89%96%E4%B8%8E%E7%94%9F%E7%90%86%E5%AD%A6/" style="font-size: 1.1em; color: #999">解剖与生理学</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 1.1em; color: #999">读书笔记</a> <a href="/tags/%E8%B5%B0%E5%A4%A9%E7%88%B6%E5%AD%90/" style="font-size: 1.5em; color: #99a9bf">走天父子</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%B1%95%E8%AE%B0%E5%BD%95/" style="font-size: 1.1em; color: #999">项目进展记录</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">10</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-11-12T00:30:32.215Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Arita</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "飘飘何所似 天地一沙鸥".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '飘'
   }
-</script>
+}
 
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
-<script  src="/js/main.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/js/lazyload.js" ></script>
-  
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-
-
-
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "今日咸鱼(1/1)&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
